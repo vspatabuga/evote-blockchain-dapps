@@ -1,6 +1,6 @@
 {
   "name": "@vspatabuga/porto-ledger",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "VSP Blockchain Ledger Simulation - Immutable Voting System",
   "type": "module",
   "main": "simulate.sh",
