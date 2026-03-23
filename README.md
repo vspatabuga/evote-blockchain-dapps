@@ -28,5 +28,47 @@ For the full architectural breakdown, including the bridge between AI Governance
 Explore the automated smart contract builds and ABI distribution in the **NPM Packages** tab of this repository.
 
 ---
+
+## 🤝 Contributing Guidelines
+
+### How to Contribute
+1. **Fork** this repository
+2. **Create** a feature branch: `git checkout -b feature/your-feature-name`
+3. **Commit** your changes: `git commit -m 'feat: add your feature'`
+4. **Push** to the branch: `git push origin feature/your-feature-name`
+5. **Open** a Pull Request
+
+### Code Standards
+- Follow Solidity best practices for smart contracts
+- Use meaningful commit messages (Conventional Commits)
+- Include tests for new functionality
+- Update documentation for API changes
+
+### Pull Request Process
+1. Ensure your PR has a clear description
+2. Reference any related issues
+3. Request review from at least one maintainer
+4. Address review comments promptly
+
+### Development Setup
+```bash
+# Clone the repository
+git clone https://github.com/vspatabuga/evote-blockchain-dapps.git
+cd evote-blockchain-dapps
+
+# Install dependencies (if applicable)
+npm install
+
+# Run tests
+npm test
+```
+
+### Issue Reporting
+- Use GitHub Issues for bug reports and feature requests
+- Provide clear reproduction steps for bugs
+- Label issues appropriately
+
+---
+
 *Standardized by PES AI-Assistant (Gemini CLI)*
 *Sovereign Systems Compliance v1.0*
