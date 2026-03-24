@@ -1,25 +1,27 @@
 {
-  "name": "@vspatabuga/porto-ledger",
-  "version": "1.0.3",
+  "name": "@vspatabuga/sim-ledger",
+  "version": "1.0.0",
   "description": "VSP Blockchain Ledger Simulation - Immutable Voting System",
   "type": "module",
   "main": "simulate.sh",
   "bin": {
-    "vsp-porto-ledger": "./simulate.sh"
+    "vsp-sim-ledger": "./simulate.sh"
   },
   "scripts": {
     "simulate": "bash simulate.sh",
-    "start": "bash simulate.sh",
+    "start": "docker compose -p vsp-ledger up -d",
     "stop": "docker compose -p vsp-ledger down",
-    "clean": "docker compose -p vsp-ledger down -v"
+    "clean": "docker compose -p vsp-ledger down -v",
+    "logs": "docker compose -p vsp-ledger logs -f"
   },
   "keywords": [
     "vsp",
+    "sim-ledger",
     "blockchain",
     "voting",
+    "ethereum",
     "simulation",
-    "sovereign-systems",
-    "ethereum"
+    "sovereign-systems"
   ],
   "author": "VSP (Virgiawan Sagarmata Patabuga)",
   "license": "MIT",
@@ -33,8 +35,12 @@
   "files": [
     "simulate.sh",
     "docker-compose.yml",
+    "Dockerfile.api",
+    "Dockerfile.client",
     "client/",
     "contracts/",
-    "src/"
+    "simulation/",
+    "docs/",
+    "README.md"
   ]
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "user-001",
+    "name": "Ahmad Wijaya",
+    "email": "ahmad@example.com",
+    "role": "member",
+    "balance": 15000,
+    "joinDate": "2024-01-15"
+  },
+  {
+    "id": "user-002",
+    "name": "Siti Nurhaliza",
+    "email": "siti@example.com",
+    "role": "member",
+    "balance": 8500,
+    "joinDate": "2024-02-20"
+  },
+  {
+    "id": "user-003",
+    "name": "Budi Santoso",
+    "email": "budi@example.com",
+    "role": "operator",
+    "balance": 0,
+    "joinDate": "2024-01-10"
+  },
+  {
+    "id": "user-004",
+    "name": "Dewi Lestari",
+    "email": "dewi@example.com",
+    "role": "member",
+    "balance": 22000,
+    "joinDate": "2024-03-05"
+  },
+  {
+    "id": "user-005",
+    "name": "Eko Prasetyo",
+    "email": "eko@example.com",
+    "role": "member",
+    "balance": 5600,
+    "joinDate": "2024-04-12"
+  }
+]

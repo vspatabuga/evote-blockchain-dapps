@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tx-001",
+    "userId": "user-001",
+    "operatorId": "user-003",
+    "items": [
+      { "type": "plastic", "weight": 2.5, "pricePerKg": 3000 },
+      { "type": "paper", "weight": 1.2, "pricePerKg": 2000 }
+    ],
+    "totalAmount": 9900,
+    "status": "completed",
+    "timestamp": "2024-06-01T08:30:00Z"
+  },
+  {
+    "id": "tx-002",
+    "userId": "user-002",
+    "operatorId": "user-003",
+    "items": [
+      { "type": "metal", "weight": 0.8, "pricePerKg": 15000 },
+      { "type": "plastic", "weight": 1.5, "pricePerKg": 3000 }
+    ],
+    "totalAmount": 16500,
+    "status": "completed",
+    "timestamp": "2024-06-01T09:15:00Z"
+  },
+  {
+    "id": "tx-003",
+    "userId": "user-004",
+    "operatorId": "user-003",
+    "items": [
+      { "type": "glass", "weight": 3.0, "pricePerKg": 1500 }
+    ],
+    "totalAmount": 4500,
+    "status": "completed",
+    "timestamp": "2024-06-01T10:00:00Z"
+  },
+  {
+    "id": "tx-004",
+    "userId": "user-005",
+    "operatorId": "user-003",
+    "items": [
+      { "type": "plastic", "weight": 0.5, "pricePerKg": 3000 },
+      { "type": "paper", "weight": 2.0, "pricePerKg": 2000 }
+    ],
+    "totalAmount": 5500,
+    "status": "pending",
+    "timestamp": "2024-06-01T11:30:00Z"
+  }
+]
