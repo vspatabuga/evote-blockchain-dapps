@@ -1,0 +1,50 @@
+# ============================================
+# Evote API Server - Next.js Standalone Mode
+# Blockchain Voting System - Backend API
+# ============================================
+
+FROM node:20-alpine AS deps
+WORKDIR /app
+
+# Install dependencies
+COPY package*.json ./
+COPY client/package*.json ./client/
+RUN npm ci --legacy-peer-deps --prefix client
+
+# Copy source
+COPY . .
+
+# Set environment for standalone API
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+WORKDIR /app/client
+
+# Build Next.js with standalone output
+RUN npm run build
+
+# Runner stage
+FROM node:20-alpine AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Create non-root user
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy standalone build
+COPY --from=deps /app/client/.next/standalone ./
+COPY --from=deps /app/client/.next/static ./.next/static
+COPY --from=deps /app/client/public ./public
+COPY --from=deps /app/client/src ./src
+
+USER nextjs
+
+EXPOSE 3001
+
+ENV PORT=3001
+ENV HOSTNAME="0.0.0.0"
+
+CMD ["node", "server.js"]
