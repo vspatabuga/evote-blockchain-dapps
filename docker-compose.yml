@@ -9,27 +9,6 @@ services:
     networks:
       - vsp_ledger_net
 
-  api:
-    build:
-      context: .
-      dockerfile: Dockerfile.api
-    container_name: vsp_ledger_api
-    ports:
-      - "3001:3001"
-    environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_NAME=evote
-      - DB_USER=postgres
-      - DB_PASSWORD=evote123
-      - GANACHE_URL=http://ganache:8545
-      - PRIVATE_KEY=${PRIVATE_KEY}
-    depends_on:
-      - db
-      - ganache
-    networks:
-      - vsp_ledger_net
-
   web:
     build:
       context: ./client
@@ -37,28 +16,9 @@ services:
     container_name: vsp_ledger_web
     ports:
       - "3000:3000"
-    environment:
-      - NEXT_PUBLIC_API_URL=http://api:3001
-    depends_on:
-      - api
-    networks:
-      - vsp_ledger_net
-
-  db:
-    image: postgres:15-alpine
-    container_name: vsp_ledger_db
-    environment:
-      - POSTGRES_DB=evote
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=evote123
-    volumes:
-      - ledger_data:/var/lib/postgresql/data
     networks:
       - vsp_ledger_net
 
 networks:
   vsp_ledger_net:
     driver: bridge
-
-volumes:
-  ledger_data:
